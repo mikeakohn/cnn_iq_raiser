@@ -1,0 +1,5 @@
+content   cnn_iq_raiser              jar:chrome/cnn_iq_raiser.jar!/content/
+skin      cnn_iq_raiser  classic/1.0 jar:chrome/cnn_iq_raiser.jar!/skin/
+locale    cnn_iq_raiser  en-US       jar:chrome/cnn_iq_raiser.jar!/locale/en-US/
+
+overlay chrome://browser/content/browser.xul  chrome://cnn_iq_raiser/content/browserOverlay.xul

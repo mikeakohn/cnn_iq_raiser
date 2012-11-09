@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css" href="chrome://cnn_iq_raiser/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM "chrome://cnn_iq_raiser/locale/browserOverlay.dtd">
+
+<overlay id="cnn_iq_raiser-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://cnn_iq_raiser/content/browserOverlay.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="cnn_iq_raiser-string-bundle"
+      src="chrome://cnn_iq_raiser/locale/browserOverlay.properties" />
+  </stringbundleset>
+
+</overlay>
