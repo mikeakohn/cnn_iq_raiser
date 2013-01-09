@@ -38,7 +38,8 @@ var CNNIqRaiser =
                       "kate gosselin", "joybehar", "kardashian",
                       "ridiculist", "gotta watch", "duggar", "omg",
                       "viral video", "nancy grace", "shades of grey",
-                      "fifty shades", "boo boo", "bff",
+                      "fifty shades", "boo boo", "bff", "legal pot",
+                      "legalize pot", "legal marijuana", "legalize marijuana",
                       "!", ".." ];
 
       //window.alert(links.length);
