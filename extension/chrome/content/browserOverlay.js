@@ -38,7 +38,7 @@ var CNNIqRaiser =
                       "kate gosselin", "joybehar", "kardashian",
                       "ridiculist", "gotta watch", "duggar", "omg",
                       "viral video", "nancy grace", "shades of grey",
-                      "fifty shades", "honey boo boo",
+                      "fifty shades", "boo boo", "bff",
                       "!", ".." ];
 
       //window.alert(links.length);
