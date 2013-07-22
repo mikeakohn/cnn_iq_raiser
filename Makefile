@@ -1,7 +1,7 @@
 
 default:
 	@cd extension/chrome; \
-	  jar cvMf cnn_iq_raiser.jar `find . -type f | grep -v .svn`; \
+	  jar cvMf cnn_iq_raiser.jar `find . -type f | grep -v .git`; \
 	  cd ../..
 	@cd extension; zip -r ../cnn_iq_raiser.xpi \
 	   chrome/cnn_iq_raiser.jar \
