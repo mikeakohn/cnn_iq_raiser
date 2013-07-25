@@ -40,7 +40,8 @@ var CNNIqRaiser =
                       "viral video", "nancy grace", "shades of grey",
                       "fifty shades", "boo boo", "bff", "legal pot",
                       "legalize pot", "legal marijuana", "legalize marijuana",
-                      "baby bump", "duchess", "royal baby",
+                      "baby bump", "duchess", "royal baby", "prince george",
+                      "george alexander louis",
                       "!", ".." ];
 
       //window.alert(links.length);
