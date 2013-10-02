@@ -41,7 +41,7 @@ var CNNIqRaiser =
                       "fifty shades", "boo boo", "bff", "legal pot",
                       "legalize pot", "legal marijuana", "legalize marijuana",
                       "baby bump", "duchess", "royal baby", "prince george",
-                      "george alexander louis",
+                      "linsanity", "twerk", "cyrus",
                       "!", ".." ];
 
       //window.alert(links.length);
