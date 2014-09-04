@@ -44,6 +44,8 @@ var CNNIqRaiser =
                       "linsanity", "twerk", "cyrus",
                       "!", ".." ];
 
+      var who_cares = [ "pregnant" ];
+
       //window.alert(links.length);
 
       var video_link = "";
@@ -75,11 +77,30 @@ var CNNIqRaiser =
               break;
             }
           }
+
+          if (iq_raise == 0 && 
+              (s.indexOf("showbiz") >= 0 || l.indexOf("gossip") >= 0))
+          {
+            for (var n in who_cares)
+            {
+              if (s.indexOf(filters[n]) >= 0 || l.indexOf(filters[n]) >= 0)
+              {
+                iq_raise = 1;
+                break;
+              }
+            }
+          }
         }
 
         if (iq_raise == 1)
         {
           links[i].innerHTML = "<font color='red'>IQ Level Raised Here</font>";
+          links[i].href = "javascript:alert('In order to protect you from becoming an idiot, this article was filtered.');";
+        }
+          else
+        if (iq_raise == 2)
+        {
+          links[i].innerHTML = "<font color='red'>Who Cares</font>";
           links[i].href = "javascript:alert('In order to protect you from becoming an idiot, this article was filtered.');";
         }
 
