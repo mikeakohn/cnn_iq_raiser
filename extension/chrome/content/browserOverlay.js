@@ -29,6 +29,8 @@ var CNNIqRaiser =
     if (url == "http://www.cnn.com/")
     {
       var links = window.content.document.getElementsByTagName("a");
+      //var div = window.content.document.getElementsByTagName("div");
+      var div = window.content.document.getElementsByClassName("m-ticker");
       var video_text = "";
       var filters = [ "bieber", "biebs",
                       "octomom", "william and kate", "will and kate",
@@ -44,7 +46,7 @@ var CNNIqRaiser =
                       "linsanity", "twerk", "cyrus",
                       "!", ".." ];
 
-      var who_cares = [ "pregnant" ];
+      var who_cares = [ "pregnant", "steve-jobs-yacht" ];
 
       //window.alert(links.length);
 
@@ -52,14 +54,21 @@ var CNNIqRaiser =
 
       for (var i in links)
       {
+        if (links[i].innerHTML == undefined) { continue; }
+
         var s = links[i].innerHTML.toLowerCase();
+        var l = "";
         s = s.replace(/&amp;/g, "and");
         s = s.replace(/\(/g, "");
         s = s.replace(/\)/g, "");
-        var l = links[i].href.toLowerCase();
-        l = l.replace(/_/g, " ");
-        l = l.replace(/\./g, " ");
-        l = l.replace(/-/g, " ");
+
+        if (links[i].href != undefined)
+        {
+          l = links[i].href.toLowerCase();
+          l = l.replace(/_/g, " ");
+          l = l.replace(/\./g, " ");
+          l = l.replace(/-/g, " ");
+        }
 
         iq_raise = 0
 
@@ -104,12 +113,12 @@ var CNNIqRaiser =
           links[i].href = "javascript:alert('In order to protect you from becoming an idiot, this article was filtered.');";
         }
 
-        if (links[i].href.indexOf("/video/") >= 0)
+        if (links[i].href != undefined && links[i].href.indexOf("/video/") >= 0)
         {
           if (s.indexOf("<img") == 0)
           {
             links[i].innerHTML += "<br /><font color='green'>^Non-video news from Google</font>";
-            links[i].href = "http://news.google.com/news?q="+encodeURIComponent(video_link);
+            links[i].href = "http://news.google.com/news?q=" + encodeURIComponent(video_link);
             video_link = "";
           }
             else
@@ -122,41 +131,12 @@ var CNNIqRaiser =
           video_link = "";
         }
       }
-    }
-      else
-    if (url.indexOf(".cnn.com/") > 0)
-    {
-      var divs = window.content.document.getElementsByTagName("div");
-      for (var i in divs)
+
+      // Remove ticker from bottom of screen freeing up more space to read
+      // articles.
+      for (var i in div)
       {
-        if (divs[i].id.indexOf("dsq-comment-message") == 0 ||
-            divs[i].id.indexOf("comment-") == 0)
-        {
-          var person = "an idiot";
-          var comment = divs[i].innerHTML.toLowerCase();
-          var filters = [ "zion", "muslim", "arab", "blacks", "islam",
-                          "hispanics", "latinos", "nazi" ];
-          var prefix = "";
-
-          if (divs[i].id.indexOf("comment-") == 0)
-          {
-            if (divs[i].innerHTML.indexOf("<br>") > 0)
-            {
-              prefix = divs[i].innerHTML.substring(0, divs[i].innerHTML.indexOf("<br>")+4);
-            }       
-          }
-
-          for (var n in filters)
-          {
-            if (comment.indexOf(filters[n]) >= 0)
-            {
-              person = "a racist";
-              break;
-            }
-          }
-
-          divs[i].innerHTML = prefix + "<font color='red'>This person is " + person + ".</font>";
-        }
+        div[i].innerHTML = "";
       }
     }
   }
